@@ -10,8 +10,9 @@ const navigate = useNavigate();
       setFile(file);
 setImage(URL.createObjectURL(file));
     }
-  };
-  const analyzePrescription = async () => {
+  }; 
+  const analyzePrescription = async () => { 
+    console.log("Analyze button clicked"); 
   if (!file) {
     alert("Please select an image first");
     return;
@@ -20,7 +21,7 @@ setImage(URL.createObjectURL(file));
   const formData = new FormData();
 
   formData.append("prescription", file);
-  const response = await fetch("http://localhost:5000/upload", {
+  const response = await fetch("https://mediscan-ofkk.onrender.com/upload", {
   method: "POST",
   body: formData,
 });
